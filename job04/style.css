@@ -1,0 +1,104 @@
+body {
+    margin: 0; /* Pour supprimer les marges par défaut */
+    padding: 0; /* Pour supprimer le padding par défaut */
+}
+
+header {
+    background-color: #88c1d0; /* Couleur de fond du header */
+    padding: 10px; /* Espacement interne */
+    display: flex; /* Pour aligner le hamburger et la navigation */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Centrer verticalement */
+}
+
+nav {
+    display: flex; /* Par défaut, la navigation est en ligne */
+}
+
+nav ul {
+    list-style: none; /* Supprimer les puces de liste */
+    padding: 0; /* Supprimer le padding par défaut */
+    margin: 0; /* Supprimer la marge par défaut */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacement entre les éléments de la liste */
+}
+
+.hamburger {
+    display: none; /* Cacher le hamburger par défaut */
+    cursor: pointer; /* Indiquer que c'est cliquable */
+}
+
+/* Styles pour les sections */
+section {
+    background-color: #88c1d0; /* Couleur de fond */
+    padding: 20px; /* Espace intérieur pour le confort visuel */
+    margin: 10px; /* Marges entre les sections */
+    border-radius: 8px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclut le padding et la marge dans la largeur totale */
+}
+
+/* Media Query pour les écrans de 768px à 1599px */
+@media (min-width: 768px) and (max-width: 1599px) {
+    body {
+        display: flex; /* Utiliser flexbox pour aligner les sections */
+        flex-wrap: wrap; /* Permet aux sections de s'enrouler si nécessaire */
+    }
+
+    section {
+        flex: 0 0 calc(50% - 20px); /* Chaque section prend 50% de la largeur moins les marges */
+    }
+}
+
+/* Media Query pour les écrans de 1600px et plus */
+@media (min-width: 1600px) {
+    body {
+        display: flex; /* Utiliser flexbox pour aligner les sections */
+        flex-wrap: wrap; /* Permet aux sections de s'enrouler si nécessaire */
+    }
+
+    section {
+        flex: 1; /* Chaque section occupe un espace égal */
+        min-width: 250px; /* Largeur minimale pour chaque section */
+    }
+}
+
+/* Media Query pour les écrans inférieurs à 767px */
+@media (max-width: 767px) {
+    body {
+        display: block; /* Afficher les sections en bloc */
+    }
+
+    nav {
+        display: none; /* Cacher la navigation par défaut */
+    }
+
+    .hamburger {
+        display: block; /* Afficher le hamburger */
+    }
+
+    section {
+        width: calc(100% - 20px); /* Chaque section occupe 100% de la largeur moins les marges */
+        margin: 10px; /* Marges uniformes sur les côtés */
+    }
+
+    nav.active {
+        display: block; /* Afficher la navigation lorsque active */
+        position: absolute; /* Positionner la navigation */
+        top: 50px; /* Ajuster la position sous le header */
+        left: 0;
+        width: 100%; /* Prendre toute la largeur */
+        background-color: #88c1d0; /* Couleur de fond */
+        z-index: 10; /* Assurer que le menu soit au-dessus d'autres éléments */
+    }
+
+    nav.active ul {
+        flex-direction: column; /* Disposer les liens en colonne */
+        margin: 0; /* Supprimer la marge pour les colonnes */
+    }
+
+    nav.active ul li {
+        margin: 10px 0; /* Espacement entre les éléments de la colonne */
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page avec Sections</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Présentation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Section 1</h2>
+        <p>Contenu de la première section.</p>
+    </section>
+    <section>
+        <h2>Section 2</h2>
+        <p>Contenu de la deuxième section.</p>
+    </section>
+    <section>
+        <h2>Section 3</h2>
+        <p>Contenu de la troisième section.</p>
+    </section>
+    <section>
+        <h2>Section 4</h2>
+        <p>Contenu de la quatrième section.</p>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
