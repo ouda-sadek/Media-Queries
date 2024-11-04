@@ -1,0 +1,58 @@
+body { 
+    margin: 0px;
+    padding: 0px;
+
+}
+
+section{
+    
+    background-color: #88c1d0; 
+    padding: 20px;    /*Donner du volume à ma section vide */
+    margin: 20px;     /*Creer un espace entre mes sections */
+    
+}
+
+/* Media Query pour les écrans compris entre 768px et 1599px */
+@media (min-width: 768px) and (max-width: 1599px) {
+    body {
+        display: flex;        /* Aligner les sections en utilisant flexbox */
+        flex-wrap: wrap;     /* Pousser les sections à la ligne si nécessaire */
+    }
+
+    section {
+        flex: 0 0 calc(50% - 20px); /* Chaque section prend 50% de la largeur moins les marges */
+        box-sizing: border-box; /* Inclut le padding et la marge dans la largeur totale */
+        min-width: 250px;      /* Largeur minimale pour chaque section */
+        min-height: 250px;     /* Hauteur minimale pour chaque section */
+    }
+}
+/* Media Query pour les écrans supérieurs ou égal à 1600px */
+@media (min-width: 1600px) {
+    body {
+        display: flex;        /* Aligner les sections en utilisant flexbox */
+        flex-wrap: wrap;     /* Pousser les sections à la ligne si nécessaire */
+    }
+
+    section {
+        flex: 1;               /* Chaque section occupe un espace égal */
+        min-width: 250px;      /* Largeur minimale pour chaque section */
+        min-height: 250px;     /* Hauteur minimale pour chaque section */
+    }
+}
+
+
+
+/* Media Query pour les écrans inférieurs ou égal à 767px */
+@media (max-width: 767px)  {
+    body {
+        display: block;        /* Aligner les sections en utilisant flexbox */
+        
+    }
+
+    section {
+        flex: none; /* Chaque section prend 50% de la largeur moins les marges */
+        width: 100%;
+        min-width: 250px;      /* Largeur minimale pour chaque section */
+        min-height: 250px;     /* Hauteur minimale pour chaque section */
+    }
+}
